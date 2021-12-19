@@ -1,0 +1,207 @@
+---
+title: Updates
+---
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include header.html %}
+        <style>
+            /*changelog formatting*/
+            section#changelog > ul {
+                border-top: 1px solid slategray;
+                padding: 1rem 0 0 1rem;
+                margin-top: 0;
+                font-weight: bold;
+            }
+            section#changelog > ul:last-child {
+                border-bottom: 1px solid slategray;
+                padding-bottom: 1rem;
+            }
+            section#changelog * ul {
+                padding-left: 2rem;
+                font-weight: normal;
+            }
+            section#changelog li {
+                list-style: none;
+            }
+            section li::before {
+                content: "";
+                width: 1.5em;
+                height: 1.5em;
+                margin: 0 .5em 0 0;
+                background-size: contain;
+				display: inline-block;
+				vertical-align: text-bottom;
+            }
+            section#changelog > ul > li::before {
+				background: url(/files/images/icons/event24px.svg);
+			}
+            section#changelog :is(li.public, li.person) li::before {
+				background: url(/files/images/icons/subdirectory_arrow_right24px.svg);
+            }
+            section#changelog li.public::before {
+				background: url(/files/images/icons/language24px.svg);
+            }
+            section#changelog li.person::before {
+				background: url(/files/images/icons/person24px.svg);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header>
+            {% include nav.html %}
+            </header>
+            
+            <main>
+                <h1>
+                    Updates
+                </h1>
+
+                <section>
+                    <p>
+                        I'll post updates that I have to my website here. Basically a change log.
+                    </p>
+                    <p>
+                        To see what this is all about, check out the <a href="/about/">about</a> page.
+                    </p>
+                </section>
+
+                <section id="changelog">
+                    <ul>
+                        <li>2021/8/17
+                            <ul>
+                                <li class="public">Siteside
+                                    <ul>
+                                        <li>Aligned "bullet points" on this page much better than previously.</li>
+                                    </ul>
+                                </li>
+                                <li class="person">Local
+                                    <ul>
+                                        <li>I've finally gotten to my new house with some of the computers set up. The one I'm using for development is working, so I'll be able to get programming again.</li>
+                                        <li>Installed a couple of extensions (VisBug and Amino) to help quicken my css development.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>2021/6/23
+                            <ul>
+                                <li class="person">Local
+                                    <ul>
+                                        <li>Moving houses has been preventing me from updating anything, hopefully going to have a setup soon.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>2021/6/3
+                            <ul>
+                                <li class="public">Siteside
+                                    <ul>
+                                        <li>Moved the css of the updates page into the html instead of through a Jekyll include.</li>
+                                    </ul>
+                                    <ul>
+                                        <li>Changed the directory location of the images and icons.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>2021/6/2
+                            <ul>
+                                <li class="public">Siteside
+                                    <ul>
+                                        <li>Lol, okay. So I had been using header completely wrong before, so that's fixed and it's all been correctly replaced by &lt;h1&gt; tags.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>2021/5/24
+                            <ul>
+                                <li class="person">Local
+                                    <ul>
+                                        <li>Stupidly old PC is now a slightly less old PC. Things should be faster now.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>2021/5/18
+                            <ul>
+                                <li class="public">Siteside
+                                    <ul>
+                                        <li>Shortened favicon names, the prefix "qupg" was unnecessary</li>
+                                    </ul>
+                                </li>
+                                <li class="person">Local
+                                    <ul>
+                                        <li>Added custom snippet for faster Jekyll include syntax</li>
+                                        <li>Moved Jekyll title to page fontmatter
+                                            <ul>
+                                                <li>Title was previously set as a variable in the include line, header.html now just takes the fontmatter title variable</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>2021/5/14
+                            <ul>
+                                <li class="public">Siteside
+                                    <ul>
+                                        <li>Added icons to this changelog. Alignment is a little off, but I can't figure out how to fix that quite yet</li>
+                                        <li>Added Jekyll include abbreviations for sitewide footer</li>
+                                    </ul>
+                                </li>
+                                <li class="person">Local
+                                    <ul>
+                                        <li>Finished installing Jekyll, Bundler, Ruby, and building locally works fine
+                                            <ul>
+                                                <li>Site work will be a lot easier now</li>
+                                            </ul>
+                                        </li>
+                                        <li>Update: Retried "installing" Jekyll onto local and copied Gemfile generated, then reverted and pasted contents, to help ensure compatibility. Building is slower, but a good sacrifice to be made I guess.</li>
+                                        <li>Added Jekyll Github Token to get rid of some error message, don't know what it actually does though</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>2021/5/13
+                            <ul>
+                                <li class="public">Siteside
+                                    <ul>
+                                        <li>Added Jekyll include abbreviations for sitewide header and navigation</li>
+                                        <li>Added updates page (older stuff will just not be documented here)</li>
+                                    </ul>
+                                </li>
+                                <li class="person">Local
+                                    <ul>
+                                        <li>Started installing Jekyll to allow for local website building and testing before pushing to repo
+                                            <ul>
+                                                <li>The previous VS Code extension was fine until I decided to put include tags to simplify coding</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+
+        {% include footer.html %}
+    </body>
+</html>

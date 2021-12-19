@@ -1,0 +1,100 @@
+@import url('https://discord-custom-covers.github.io/usrbg/dist/usrbg.css');
+:root {
+  --alert-color: rgb(255, 0, 0);
+}
+/*stream preview blocker*/
+.pictureInPictureVideo-2iKsGg {
+  display: none;
+}
+/*offline blocker*/
+.container-16j22k {
+  background: transparent; pointer-events: none
+}
+.container-16j22k>div {
+  display: none
+}
+.container-16j22k::before {
+  content: "You've gone offline";
+  display: block;
+  bottom: 24px; right: 24px;
+  position: absolute;
+  padding: 8px 16px;
+  background-color: #f04747;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500
+}
+/*discovery icon blocker*/
+.tutorialContainer-30WoTp+div {
+  display:none
+}
+/*change home icon*/
+.homeIcon-FuNwkv path {
+  fill: transparent
+}
+.homeIcon-FuNwkv {
+  background: url('https://fonts.gstatic.com/s/i/materialicons/home/v11/24px.svg') center/contain no-repeat;
+  min-width: 35px;
+  min-height: 35px;
+}
+/*discord message link shortener*/
+[href^="https://discord.com/channels/"] {
+  line-height:0;
+  font-size:0;
+}
+[href^="https://discord.com/channels/"]::before {
+  content:'Jump to Message';
+  font-size:16px;
+  font-weight:700;
+}
+/*title blocker*/
+.wordmarkWindows-1v0lYD {
+  display: none;
+}
+/*invite to server blocker*/
+#user-context-invite-to-server {
+  display: none;
+}
+/*nitro dm blocker*/
+#private-channels a[href="/store"] {
+  display: none;
+}
+/*help icon blocker*/
+.toolbar-1t6TWx a {
+  display: none;
+}
+/*user backgrounds*/
+.userPopout-3XzG_A {
+	transform:translateZ(0);
+}
+.userPopout-3XzG_A .wrapper-3t9DeA::after {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	pointer-events: none;
+	opacity: .5;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: var(--user-popout-position) center;
+	background-image: var(--user-background);
+	-webkit-mask-image: linear-gradient(#000, transparent);
+}
+.userPopout-3XzG_A  .header-2BwW8b, .userPopout-3XzG_A  .scroller-2FKFPG, .userPopout-3XzG_A  .footer-1fjuF6 {
+	z-index: 1;
+}
+/*settings animation block*/
+.layer-3QrUeG {
+  transform: none !important;
+  opacity: 1 !important;
+}
+.layers-3iHuyZ>.layer-3QrUeG.animating-rRxada *, .layers-3iHuyZ>.layer-3QrUeG.animating-rRxada {
+  pointer-events: auto !important;
+  will-change: unset;
+}
+.animating-rRxada.stop-animations {
+  z-index: 100 !important;
+}
