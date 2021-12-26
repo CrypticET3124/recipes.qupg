@@ -1,3 +1,10 @@
 port: 4003
 incremental: true
-livereload: true
+
+defaults:
+  -
+    scope:
+      path: "recipes/desserts"
+      type: "pages"
+    values:
+      category: "desserts"

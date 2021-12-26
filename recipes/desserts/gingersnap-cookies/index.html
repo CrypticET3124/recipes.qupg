@@ -1,0 +1,62 @@
+---
+title: GingerSnap Cookies
+type: cookies
+image: gingersnap-cookies.jpg
+tag: desserts
+---
+<!doctype html>
+<html lang="en">
+
+	<head>
+		{% include header.html %}
+		<style>
+			{% include recipelist.css %}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<header>
+				{% include nav.html %}
+			</header>
+
+			<main>
+				<section id="heading">
+					<h1>
+						{{ page.title }}
+					</h1>
+
+					<img src="{{ page.image }}" alt="asd">
+
+					<p>{{ page.category }}</p>
+					<section id="rating">
+						<div id="wpac-rating" data-wpac-chan="gingersnap_cookies"></div>
+						<a href="https://widgetpack.com" class="wpac-cr">Star Rating WIDGET PACK</a>
+					</section>
+				</section>
+
+				<section id="recipe">
+					
+				</section>
+			</main>
+		</div>
+
+		<footer>
+			{% include footer.html %}
+			<script type="text/javascript">
+				wpac_init = window.wpac_init || [];
+				wpac_init.push({ widget: 'Rating', id: 33306 });
+				(function () {
+					if ('WIDGETPACK_LOADED' in window) return;
+					WIDGETPACK_LOADED = true;
+					var mc = document.createElement('script');
+					mc.type = 'text/javascript';
+					mc.async = true;
+					mc.src = 'https://embed.widgetpack.com/widget.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+				})();
+			</script>
+		</footer>
+	</body>
+
+</html>

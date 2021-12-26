@@ -1,0 +1,78 @@
+---
+title: Recipes
+type: notrecipe
+---
+<!doctype html>
+<html lang="en">
+
+	<head>
+		{% include header.html %}
+		<style>
+			{% include recipelist.css %}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<header>
+				{% include nav.html %}
+			</header>
+
+			<main>
+				<h1>
+					{{ page.title }}
+				</h1>
+
+				<section id="recipes">
+					<section id="popular">
+						<h2>
+							Popular Recipes
+						</h2>
+					</section>
+
+					<section id="recent">
+						<h2>
+							Recent Recipes
+						</h2>
+					</section>
+
+					<section id="all">
+						<h2>
+							All Recipes
+						</h2>
+
+						<ul>
+							{% for page in site.html_pages %}
+							{% if page.path contains "recipes/" and page.type != "notrecipe" %}
+							<li>
+								<img class="image" src="{{ page.url }}{{ page.image }}" alt="{{ page.title }}">
+
+								<section class="text">
+									<p class="title">
+										<a href="{{ page.url }}" class="public">{{ page.title }}</a>
+									</p>
+									<p class="category">
+										{{ page.category | capitalize }} - {{ page.type | capitalize }}
+									</p>
+									<p>
+										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto nobis numquam veniam quae tenetur doloremque sint,
+										fuga, voluptates aspernatur, sed rerum deserunt corrupti sapiente est omnis fugiat! Illum, a incidunt.
+									</p>
+								</section>
+								
+							</li>
+							{% endif %}
+							{% endfor %}
+						</ul>
+					</section>
+
+				</section>
+			</main>
+		</div>
+
+		<footer>
+			{% include footer.html %}
+		</footer>
+	</body>
+
+</html>
