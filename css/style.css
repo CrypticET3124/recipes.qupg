@@ -101,10 +101,10 @@ h1, h2, h3, h4, h5, h6, p {
 /*footer position*/
 .wrapper {
 	min-height: 100%;
-	margin-bottom: -50px;
+	margin-bottom: -3.125rem;
 }
 footer, .push {
-	height: 50px;
+	height: 3.125rem;
 }
 /*footer style*/
 footer { 

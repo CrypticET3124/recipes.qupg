@@ -10,7 +10,7 @@ tag: desserts
 	<head>
 		{% include header.html %}
 		<style>
-			{% include recipelist.css %}
+			{% include recipe.css %}
 		</style>
 	</head>
 
@@ -22,40 +22,49 @@ tag: desserts
 
 			<main>
 				<section id="heading">
-					<h1>
-						{{ page.title }}
-					</h1>
+					<img src="{{ page.image }}" alt="{{ page.title }}">
 
-					<img src="{{ page.image }}" alt="asd">
-
-					<p>{{ page.category }}</p>
-					<section id="rating">
-						<div id="wpac-rating" data-wpac-chan="gingersnap_cookies"></div>
-						<a href="https://widgetpack.com" class="wpac-cr">Star Rating WIDGET PACK</a>
-					</section>
+					<div class="text">
+						<h1>
+							{{ page.title }}
+						</h1>
+						<p>
+							{{ page.category | capitalize }} - {{ page.type | capitalize }}
+						</p>
+						
+					</div>
 				</section>
 
 				<section id="recipe">
-					
+					<section id="ingredients">
+						<h2>
+							Ingredients
+						</h2>
+						3/4 c Crisco butter flavored
+						1 c sugar
+						1 egg
+						1/4 c molasses
+						2 tsp. baking soda
+						2 c flour
+						1/2 tsp. cloves
+						1/2 heaping tsp. ginger
+						1 heaping tsp. cinnamon
+						1/2 tsp. salt
+					</section>
+					<section id="directions">
+						<h2>
+							Directions
+						</h2>
+						Put shortening and sugar in mixer and mix them together. Add egg and beat till pale yellow. Add molasses and mix till
+						incorporated. In a separate bowl, mix dry ingredients together. Pour dry ingredients into mixer and mix well. Roll into
+						balls, being careful not to compress dough, and gently coat in sugar. Bake on greased pan. 375° for 8-10 minutes.
+					</section>
 				</section>
 			</main>
 		</div>
 
 		<footer>
 			{% include footer.html %}
-			<script type="text/javascript">
-				wpac_init = window.wpac_init || [];
-				wpac_init.push({ widget: 'Rating', id: 33306 });
-				(function () {
-					if ('WIDGETPACK_LOADED' in window) return;
-					WIDGETPACK_LOADED = true;
-					var mc = document.createElement('script');
-					mc.type = 'text/javascript';
-					mc.async = true;
-					mc.src = 'https://embed.widgetpack.com/widget.js';
-					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
-				})();
-			</script>
 		</footer>
 	</body>
 

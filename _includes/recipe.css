@@ -1,0 +1,27 @@
+section#heading {
+    display: flex;
+}
+section#heading p {
+	font-size: .875rem;
+}
+section#heading img {
+	height: 15rem;
+	width: 15rem;
+	margin-right: 1rem;
+}
+section#heading div.text p.title {
+	font-size: 1.25rem;
+	font-weight: bold;
+	line-height: normal;
+	border-bottom: 1px solid slategrey;
+	margin-bottom: .5rem;
+}
+section#heading div.text {
+    min-height: 10rem;
+	line-height: 1rem;
+    display: flex;
+	flex-direction: column;
+}
+section#recipe {
+    display: flex;
+}
