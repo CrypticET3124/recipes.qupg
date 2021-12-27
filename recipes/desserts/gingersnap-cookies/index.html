@@ -1,8 +1,9 @@
 ---
 title: GingerSnap Cookies
-type: cookies
 image: gingersnap-cookies.jpg
+type: cookies
 tag: desserts
+time: 1 hour
 ---
 <!doctype html>
 <html lang="en">
@@ -24,14 +25,17 @@ tag: desserts
 				<section id="heading">
 					<img src="{{ page.image }}" alt="{{ page.title }}">
 
-					<div class="text">
+					<div id="text">
 						<h1>
 							{{ page.title }}
 						</h1>
-						<p>
+						<p id="categories">
 							{{ page.category | capitalize }} - {{ page.type | capitalize }}
 						</p>
-						
+						<section id="details">
+							Time to Cook: {{ page.time | capitalize }}
+						</section>
+
 					</div>
 				</section>
 
@@ -40,24 +44,38 @@ tag: desserts
 						<h2>
 							Ingredients
 						</h2>
-						3/4 c Crisco butter flavored
-						1 c sugar
-						1 egg
-						1/4 c molasses
-						2 tsp. baking soda
-						2 c flour
-						1/2 tsp. cloves
-						1/2 heaping tsp. ginger
-						1 heaping tsp. cinnamon
-						1/2 tsp. salt
+						<ul>
+							<li><ing>3/4 c</ing> Crisco Butter flavored</li>
+							<li><ing>1 c</ing> Sugar</li>
+							<li><ing>1</ing> Egg</li>
+							<li><ing>1/4 c</ing> molasses</li>
+						</ul>
+						<h3>
+							Dry Ingredients
+						</h3>
+						<ul>
+							<li><ing>2 tsp.</ing> baking soda</li>
+							<li><ing>2 c</ing> flour</li>
+							<li><ing>1/2 tsp</ing> cloves</li>
+							<li><ing>1/2 heaping tsp</ing> ginger</li>
+							<li><ing>1 heaping tsp</ing> cinnamon</li>
+							<li><ing>1/2 tsp</ing> salt</li>
+						</ul>
 					</section>
+
 					<section id="directions">
 						<h2>
 							Directions
 						</h2>
-						Put shortening and sugar in mixer and mix them together. Add egg and beat till pale yellow. Add molasses and mix till
-						incorporated. In a separate bowl, mix dry ingredients together. Pour dry ingredients into mixer and mix well. Roll into
-						balls, being careful not to compress dough, and gently coat in sugar. Bake on greased pan. 375° for 8-10 minutes.
+						<ol>
+							<li>Put Crisco Butter and sugar in mixer and mix them together.</li>
+							<li>Add egg and beat till pale yellow.</li>
+							<li>Add molasses and mix till incorporated.</li>
+							<li>In a separate bowl, mix dry ingredients together.</li>
+							<li>Pour dry ingredients into mixer and mix well.</li>
+							<li>Roll into balls, being careful not to compress dough, and gently coat in sugar.</li>
+							<li>Bake on greased pan at <strong>375°</strong> for <strong>8-10</strong> minutes.</li>
+						</ol>
 					</section>
 				</section>
 			</main>
