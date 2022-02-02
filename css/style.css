@@ -71,6 +71,7 @@ nav .dropdown:hover .dropdown-content {
 }
 .logonav {
 	max-height: 3rem;
+	max-width: 3rem;
 	padding-right: 1rem;
 	padding-left: 1rem;
 	overflow: hidden;
