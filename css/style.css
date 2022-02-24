@@ -1,3 +1,8 @@
+:root {
+	--main-color: rgb(63, 81, 181);
+	--main-color-dark: rgb(31, 49, 99);
+	--accent-color: rgb(68, 138, 255);
+}
 /*main text style*/
 body, html {
 	font-family: Calibri,sans-serif;
@@ -7,6 +12,8 @@ body, html {
 	outline: 0;
 	padding: 0;
 	height: 100%;
+	color: white;
+	background-color: rgb(50, 50, 50);
 }
 html {
 	overflow-x: hidden;
@@ -20,14 +27,16 @@ nav ul {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: rgb(50, 50, 50);
+	background-color: var(--main-color);
 }
 nav li {
 	float: left;
+	height: 3rem;
 	border-right: 1px solid rgb(187, 187, 187);
 }
-nav li:first-child.logo {
-	height: 3rem;
+#navTitle {
+	float: left;
+	border: none;
 }
 nav li.right {
 	border-right: none;
@@ -36,14 +45,21 @@ nav li.right {
 }
 nav li a, .dropbtn {
 	display: inline-block;
-	color: rgb(255, 255, 255);
+	color: white;
 	text-align: center;
 	padding: .75rem 1rem;
 	text-decoration: none;
 	font-weight: bold;
 }
+nav li#navTitle div {
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: .75rem 1rem;
+	font-weight: bold;
+}
 nav li a:hover, .dropdown:hover .dropbtn {
-	background-color: rgb(17, 17, 17);
+	background-color: var(--main-color-dark);
 }
 nav li.dropdown {
 	display: inline-block;
@@ -51,30 +67,40 @@ nav li.dropdown {
 nav .dropdown-content {
 	display: none;
 	position: absolute;
-	background-color: rgb(75, 75, 75);
+	background-color: var(--main-color);
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
 }
 nav .dropdown-content a {
-	color: rgb(255, 255, 255);
+	color: white;
 	padding: .75rem 1rem;
 	text-decoration: none;
 	display: block;
 	text-align: left;
 }
 nav .dropdown-content a:hover {
-	background-color: rgb(50, 50, 50);
+	background-color: var(--main-color-dark);
 }
 nav .dropdown:hover .dropdown-content {
 	display: block;
 }
 .logonav {
-	max-height: 3rem;
-	max-width: 3rem;
+	position: relative;
+	height: 3rem;
+	width: 3rem;
 	padding-right: 1rem;
 	padding-left: 1rem;
 	overflow: hidden;
+}
+.logonav .logo {
+	height: 1.5rem;
+	width: 100%;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 /*text formatting*/
 h1 {
@@ -112,9 +138,13 @@ footer {
 	margin: 0;
 	padding-left: .5em;
 	padding-right: .5em;
-	overflow: hidden;
-	background-color: rgb(50, 50, 50);
-	color: rgb(255, 255, 255);
+	overflow: auto;
+	background-color: var(--main-color-dark);
+	-ms-overflow-style: none;  /* IE and Edge scrollbar */
+	scrollbar-width: none;  /* Firefox scrollbar */
+}
+footer::-webkit-scrollbar {
+	display: none;
 }
 /*external link icon*/
 a[target="_blank"]:not(.no-ex-link)::after {
