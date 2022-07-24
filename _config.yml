@@ -7,4 +7,4 @@ defaults:
       path: "recipes/desserts"
       type: "pages"
     values:
-      category: "desserts"
+      categories: ["desserts", "recipes"]

@@ -1,8 +1,9 @@
 ---
 title: GingerSnap Cookies
-image: gingersnap-cookies.jpg
-type: cookies
-tag: desserts
+id: 0
+date: 2022-07-22
+image: main.jpg
+tag: cookies
 time: 1 hour
 ---
 <!doctype html>
@@ -10,8 +11,8 @@ time: 1 hour
 
 	<head>
 		{% include header.html %}
+		<link rel="stylesheet" href="/css/recipe.css">
 		<style>
-			{% include recipe.css %}
 		</style>
 	</head>
 
@@ -30,12 +31,13 @@ time: 1 hour
 							{{ page.title }}
 						</h1>
 						<p id="categories">
-							{{ page.category | capitalize }} - {{ page.type | capitalize }}
+							{{ page.categories | first | capitalize }} - {{ page.tag | capitalize }}
 						</p>
 						<section id="details">
 							Time to Cook: {{ page.time | capitalize }}
+							<br>
+							Published: {{ page.date | date_to_string: "ordinal", "US" }}
 						</section>
-
 					</div>
 				</section>
 
@@ -45,21 +47,21 @@ time: 1 hour
 							Ingredients
 						</h2>
 						<ul>
-							<li><ing>3/4 c</ing> Crisco Butter flavored</li>
-							<li><ing>1 c</ing> Sugar</li>
-							<li><ing>1</ing> Egg</li>
-							<li><ing>1/4 c</ing> molasses</li>
+							<li><mes>3/4 c</mes> Crisco Butter flavored</li>
+							<li><mes>1 c</mes> Sugar</li>
+							<li><mes>1</mes> Egg</li>
+							<li><mes>1/4 c</mes> molasses</li>
 						</ul>
 						<h3>
 							Dry Ingredients
 						</h3>
 						<ul>
-							<li><ing>2 tsp.</ing> baking soda</li>
-							<li><ing>2 c</ing> flour</li>
-							<li><ing>1/2 tsp</ing> cloves</li>
-							<li><ing>1/2 heaping tsp</ing> ginger</li>
-							<li><ing>1 heaping tsp</ing> cinnamon</li>
-							<li><ing>1/2 tsp</ing> salt</li>
+							<li><mes>2 tsp.</mes> baking soda</li>
+							<li><mes>2 c</mes> flour</li>
+							<li><mes>1/2 tsp</mes> cloves</li>
+							<li><mes>1/2 heaping tsp</mes> ginger</li>
+							<li><mes>1 heaping tsp</mes> cinnamon</li>
+							<li><mes>1/2 tsp</mes> salt</li>
 						</ul>
 					</section>
 

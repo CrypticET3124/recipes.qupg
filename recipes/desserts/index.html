@@ -7,8 +7,8 @@ type: notrecipe
 
 	<head>
 		{% include header.html %}
+		<link rel="stylesheet" href="/css/recipelist.css">
 		<style>
-			{% include recipelist.css %}
 		</style>
 	</head>
 
@@ -23,31 +23,39 @@ type: notrecipe
 					{{ page.title }}
 				</h1>
 
-				<p>{{ page.category }}</p>
-
 				<section id="recipes">
-					<ul>
-						{% for page in site.html_pages %}
-						{% if page.path contains "recipes/desserts/" and page.type != "notrecipe" %}
-						<li>
-							<img class="image" src="{{ page.url }}{{ page.image }}" alt="{{ page.title }}">
+					<section id="recent">
+						<h2>
+							Recent Desserts
+						</h2>
+						{% assign recent_pgs = site.pages | where_exp: "item", "item.categories contains 'desserts'" | where_exp: "item", "item.type != 'notrecipe'" | sort: "date" | reverse %}
+						
+						<ul>
+							{% for page in recent_pgs limit: 6 %}
+							<li>
+								<img class="image" src="{{ page.url }}{{ page.image }}" alt="{{ page.title }}">
+						
+								<section class="text">
+									<p class="title">
+										<a href="{{ page.url }}" class="public">{{ page.title }}</a>
+									</p>
+									<p class="category">
+										{{ page.categories | first | capitalize }} - {{ page.tag | capitalize }}
+									</p>
+									<p class="details">
+										Time to cook: {{ page.time }}
+									</p>
+								</section>
+							</li>
+							{% endfor %}
+						</ul>
+					</section>
 
-							<section class="text">
-								<p class="title">
-									<a href="{{ page.url }}" class="public">{{ page.title }}</a>
-								</p>
-								<p class="category">
-									{{ page.category | capitalize }} - {{ page.type | capitalize }}
-								</p>
-								<p class="details">
-									Time to cook: {{ page.time }}
-								</p>
-							</section>
-
-						</li>
-						{% endif %}
-						{% endfor %}
-					</ul>
+					<section id="all">
+						<h2>
+							<a href="/recipes/desserts/all/">All Desserts</a>
+						</h2>
+					</section>
 				</section>
 			</main>
 		</div>

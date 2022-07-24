@@ -1,8 +1,9 @@
 ---
 title: Caramel Sin Bars
+id: 1
+date: 2022-07-23
 image: main.jpg
-type: cookie bar
-tag: desserts
+tag: cookie bar
 time: 1 hour 30 minutes
 ---
 <!doctype html>
@@ -10,8 +11,8 @@ time: 1 hour 30 minutes
 
 	<head>
 		{% include header.html %}
+		<link rel="stylesheet" href="/css/recipe.css">
 		<style>
-			{% include recipe.css %}
 		</style>
 	</head>
 
@@ -30,12 +31,13 @@ time: 1 hour 30 minutes
 							{{ page.title }}
 						</h1>
 						<p id="categories">
-							{{ page.category | capitalize }} - {{ page.type | capitalize }}
+							{{ page.categories | first | capitalize }} - {{ page.tag | capitalize }}
 						</p>
 						<section id="details">
 							Time to Cook: {{ page.time | capitalize }}
+							<br>
+							Published: {{ page.date | date_to_string: "ordinal", "US" }}
 						</section>
-
 					</div>
 				</section>
 
@@ -44,22 +46,25 @@ time: 1 hour 30 minutes
 						<h2>
 							Ingredients
 						</h2>
-						<ul>
-							<li><ing>3/4 c</ing> Crisco Butter flavored</li>
-							<li><ing>1 c</ing> Sugar</li>
-							<li><ing>1</ing> Egg</li>
-							<li><ing>1/4 c</ing> molasses</li>
-						</ul>
+
 						<h3>
-							Dry Ingredients
+							Caramel Filling:
 						</h3>
 						<ul>
-							<li><ing>2 tsp.</ing> baking soda</li>
-							<li><ing>2 c</ing> flour</li>
-							<li><ing>1/2 tsp</ing> cloves</li>
-							<li><ing>1/2 heaping tsp</ing> ginger</li>
-							<li><ing>1 heaping tsp</ing> cinnamon</li>
-							<li><ing>1/2 tsp</ing> salt</li>
+							<li><mes>1 stick (110g)</mes> butter</li>
+							<li><mes>32</mes> Kraft caramel's or <mes>1 1/3 cup (320ml)</mes> Kraft caramel bits</li>
+							<li><mes>1 can (397g)</mes> sweetened condensed Milk</li>
+						</ul>
+						<h3>
+							Crust:
+						</h3>
+						<ul>
+							<li><mes>1 pkg</mes> yellow cake mix</li>
+							<li><mes>1 cup (237ml)</mes> white chocolate chips</li>
+							<li><mes>2 cup (473ml)</mes> chocolate chips</li>
+							<li><mes>1</mes> Heath bar crushed or crushed home made toffee (optional)</li>
+							<li><mes>1/2 cup (118ml)</mes> vegetable oil</li>
+							<li><mes>2</mes> eggs</li>
 						</ul>
 					</section>
 
@@ -68,14 +73,26 @@ time: 1 hour 30 minutes
 							Directions
 						</h2>
 						<ol>
-							<li>Put Crisco Butter and sugar in mixer and mix them together.</li>
-							<li>Add egg and beat till pale yellow.</li>
-							<li>Add molasses and mix till incorporated.</li>
-							<li>In a separate bowl, mix dry ingredients together.</li>
-							<li>Pour dry ingredients into mixer and mix well.</li>
-							<li>Roll into balls, being careful not to compress dough, and gently coat in sugar.</li>
-							<li>Bake on greased pan at <strong>375°</strong> for <strong>8-10</strong> minutes.</li>
+							<li>In sauce pan, combine caramel filling ingredients and stir until melted. Stir constantly to avoid scorching.</li>
+							<li>Mix crust ingredients together in a mixer.</li>
+							<li>Preheat oven <strong>350 F (177 C)</strong>. Grease a <strong>13x9 inch (33x23x5cm)</strong> baking pan. Press <strong>3/4's</strong> crust mix into pan. Cook for <strong>15 minutes</strong>.</li>
+							<li>Cool on cooling rack 10 min.</li>
+							<li>Pour Caramel mixture onto cake. Drop remaining dough by spoonfuls over caramel covering. Bake for another <strong>20-25 minutes</strong>. Edges should be golden. Cool <strong>40 min</strong>. Cover and cool in fridge before eating or eat it warm!</li>
 						</ol>
+					</section>
+
+					<div class="break"></div>
+
+					<section id="notes">
+						<h2>
+							Notes
+						</h2>
+						<p>
+							Golden around the edges refers to the caramel bubbling up around it. Waiting for the cake to brown will overcook the
+							caramel into a chewy, yet yummy consistency that could easily pull the fillings from your teeth.
+							<br>
+							For nut allergies, use nut free ingredients and omit Heath Bar.
+						</p>
 					</section>
 				</section>
 			</main>

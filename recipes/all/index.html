@@ -1,5 +1,5 @@
 ---
-title: Recipes
+title: All Recipes
 type: notrecipe
 ---
 <!doctype html>
@@ -24,17 +24,13 @@ type: notrecipe
 				</h1>
 
 				<section id="recipes">
-					<section id="recent">
-						<h2>
-							Recent Recipes
-						</h2>
-						{% assign recent_pgs = site.pages | where_exp: "item", "item.categories contains 'recipes'" | where_exp: "item", "item.type != 'notrecipe'" | sort: "date" | reverse %}
-
+					<section id="all">
+						{% assign all_pgs = site.pages | where_exp: "item", "item.categories contains 'recipes'" | where_exp: "item", "item.type != 'notrecipe'" | sort: "title" %}
 						<ul>
-							{% for page in recent_pgs limit: 6 %}
+							{% for page in all_pgs %}
 								<li>
 									<img class="image" src="{{ page.url }}{{ page.image }}" alt="{{ page.title }}">
-							
+
 									<section class="text">
 										<p class="title">
 											<a href="{{ page.url }}" class="public">{{ page.title }}</a>
@@ -49,12 +45,6 @@ type: notrecipe
 								</li>
 							{% endfor %}
 						</ul>
-					</section>
-
-					<section id="all">
-						<h2>
-							<a href="/recipes/all/">All Recipes</a>
-						</h2>
 					</section>
 
 				</section>
