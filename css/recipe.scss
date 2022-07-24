@@ -13,7 +13,7 @@
         height: 15rem;
         width: 15rem;
         margin-right: 1rem;
-        object-fit: cover;
+        object-fit: contain;
     }
 
     #text {
@@ -68,41 +68,6 @@
     }
 }
 
-@media only screen and (max-width: 1400px) {
-    #recipe {
-        #directions {
-            flex: 0 0 65%;
-        }
-
-        #notes {
-            padding-right: 60%;
-        }
-    }
-}
-
-@media only screen and (max-width: 850px) {
-    #recipe {
-        flex-direction: column;
-
-        #ingredients {
-            flex: auto;
-            border-right: none;
-            border-bottom: 1px solid slategray;
-        }
-
-        #directions {
-            flex: auto;
-            border-bottom: 1px solid slategray;
-        }
-
-        #notes {
-            margin-top: auto;
-            border: none;
-            padding-right: 0;
-        }
-    }
-}
-
 /*recipe style*/
 #recipe {
 
@@ -122,5 +87,48 @@
 
     #directions li {
         line-height: 1.75rem;
+    }
+}
+
+/*reactive style*/
+@media only screen and (max-width: 1400px) {
+    #recipe {
+        #directions {
+            flex: 0 0 65%;
+        }
+
+        #notes {
+            padding-right: 60%;
+        }
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    #heading {
+        img {
+            max-width: 40%;
+            
+        }
+    }
+
+    #recipe {
+        flex-direction: column;
+
+        #ingredients {
+            flex: auto;
+            border-right: none;
+            border-bottom: 1px solid slategray;
+        }
+
+        #directions {
+            flex: auto;
+            border-bottom: 1px solid slategray;
+        }
+
+        #notes {
+            margin-top: auto;
+            border: none;
+            padding-right: 0;
+        }
     }
 }
