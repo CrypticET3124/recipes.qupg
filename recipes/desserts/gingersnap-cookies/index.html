@@ -31,7 +31,7 @@ time: 1 hour
 							{{ page.title }}
 						</h1>
 						<p id="categories">
-							{{ page.categories | first | capitalize }} - {{ page.tag | capitalize }}
+							<a href="/recipes/{{ page.categories | first }}">{{ page.categories | first | capitalize }}</a> - {{ page.tag | capitalize }}
 						</p>
 						<section id="details">
 							Time to Cook: {{ page.time | capitalize }}
@@ -76,7 +76,7 @@ time: 1 hour
 							<li>In a separate bowl, mix dry ingredients together.</li>
 							<li>Pour dry ingredients into mixer and mix well.</li>
 							<li>Roll into balls, being careful not to compress dough, and gently coat in sugar.</li>
-							<li>Bake on greased pan at <strong>375°</strong> for <strong>8-10</strong> minutes.</li>
+							<li>Bake on greased pan at <mes>375°</mes> for <mes>8-10</mes> minutes.</li>
 						</ol>
 					</section>
 				</section>

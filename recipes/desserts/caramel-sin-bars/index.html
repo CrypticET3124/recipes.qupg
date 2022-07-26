@@ -31,7 +31,7 @@ time: 1 hour 30 minutes
 							{{ page.title }}
 						</h1>
 						<p id="categories">
-							{{ page.categories | first | capitalize }} - {{ page.tag | capitalize }}
+							<a href="/recipes/{{ page.categories | first }}">{{ page.categories | first | capitalize }}</a> - {{ page.tag | capitalize }}
 						</p>
 						<section id="details">
 							Time to Cook: {{ page.time | capitalize }}
@@ -55,6 +55,7 @@ time: 1 hour 30 minutes
 							<li><mes>32</mes> Kraft caramel's or <mes>1 1/3 cup (320ml)</mes> Kraft caramel bits</li>
 							<li><mes>1 can (397g)</mes> sweetened condensed Milk</li>
 						</ul>
+						
 						<h3>
 							Crust:
 						</h3>
@@ -75,9 +76,9 @@ time: 1 hour 30 minutes
 						<ol>
 							<li>In sauce pan, combine caramel filling ingredients and stir until melted. Stir constantly to avoid scorching.</li>
 							<li>Mix crust ingredients together in a mixer.</li>
-							<li>Preheat oven <strong>350 F (177 C)</strong>. Grease a <strong>13x9 inch (33x23x5cm)</strong> baking pan. Press <strong>3/4's</strong> crust mix into pan. Cook for <strong>15 minutes</strong>.</li>
-							<li>Cool on cooling rack 10 min.</li>
-							<li>Pour Caramel mixture onto cake. Drop remaining dough by spoonfuls over caramel covering. Bake for another <strong>20-25 minutes</strong>. Edges should be golden. Cool <strong>40 min</strong>. Cover and cool in fridge before eating or eat it warm!</li>
+							<li>Preheat oven <mes>350 F (177 C)</mes>. Grease a <mes>13x9 inch (33x23x5cm)</mes> baking pan. Press <mes>3/4's</mes> crust mix into pan. Cook for <mes>15 minutes</mes>.</li>
+							<li>Cool on cooling rack <mes>10 min</mes>.</li>
+							<li>Pour Caramel mixture onto cake. Drop remaining dough by spoonfuls over caramel covering. Bake for another <mes>20-25 minutes</mes>. Edges should be golden. Cool <mes>40 min</mes>. Cover and cool in fridge before eating or eat it warm!</li>
 						</ol>
 					</section>
 

@@ -1,6 +1,5 @@
 ---
 ---
-
 /*heading section*/
 #heading {
     display: flex;
@@ -36,7 +35,11 @@
     }
 
     #categories {
-        color: darkslategray;
+        color: #e8b923;
+
+        * {
+            color: #e8b923;
+        }
     }
 }
 
@@ -86,8 +89,14 @@
         font-weight: bold;
     }
 
-    #directions li {
-        line-height: 1.75rem;
+    #directions {
+        li {
+            line-height: 1.75rem;
+        }
+
+        mes {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -106,8 +115,7 @@
 
 @media only screen and (max-width: 850px) {
     #heading {
-        img {
-        }
+        img {}
     }
 
     #recipe {

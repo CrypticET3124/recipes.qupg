@@ -1,0 +1,104 @@
+---
+title: Crepes
+id: 2
+date: 2022-07-25
+image: main.jpg
+tag: crepe
+time: 1 hour 30 minutes
+---
+<!doctype html>
+<html lang="en">
+
+	<head>
+		{% include header.html %}
+		<link rel="stylesheet" href="/css/recipe.css">
+		<style>
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<header>
+				{% include nav.html %}
+			</header>
+
+			<main>
+				<section id="heading">
+					<img src="{{ page.image }}" alt="{{ page.title }}">
+
+					<div id="text">
+						<h1>
+							{{ page.title }}
+						</h1>
+						<p id="categories">
+							<a href="/recipes/{{ page.categories | first }}">{{ page.categories | first | capitalize }}</a> - {{ page.tag | capitalize }}
+						</p>
+						<section id="details">
+							Time to Cook: {{ page.time | capitalize }}
+							<br>
+							Published: {{ page.date | date_to_string: "ordinal", "US" }}
+						</section>
+					</div>
+				</section>
+
+				<section id="recipe">
+					<section id="ingredients">
+						<h2>
+							Ingredients
+						</h2>
+
+						<ul>
+							<li><mes>2</mes> large eggs</li>
+							<li><mes>3/4 cup</mes> milk</li>
+							<li><mes>1/2 cup</mes> water</li>
+							<li><mes>1 cup</mes> flour</li>
+							<li><mes>3 tbs</mes> melted butter</li>
+							<li>Butter, for coating the pan</li>
+						</ul>
+
+						<h3>Savory Variation</h3>
+						<ul>
+							<li><mes>1/4 tsp</mes> salt</li>
+							<li><mes>1/4 cup</mes> chopped fresh herbs, spinach or sun-dried tomatoes</li>
+						</ul>
+						
+						<h3>Sweet Variation</h3>
+						<ul>
+							<li><mes>1/4 cup</mes> sugar</li>
+							<li><mes>1-2 tsp</mes> vanilla extract</li>
+						</ul>
+					</section>
+
+					<section id="directions">
+						<h2>
+							Directions
+						</h2>
+						<ol>
+							<li>In a blender, combine all of the ingredients and pulse for <mes>10 seconds</mes>.</li>
+							<li>Place the crepe batter in the refrigerator for <mes>1 hour</mes>. This allows the bubbles to subside so the crepes will be less likely to tear during cooking. The batter will keep for up to 48 hours.</li>
+							<li>Heat a small non-stick pan. Add butter to coat. Pour <mes>1 ounce</mes> of batter into the center of the pan and swirl to spread evenly.</li>
+							<li>Cook for <mes>30 seconds</mes> and flip. Cook for another <mes>10 seconds</mes> and remove to the cutting board. Lay them out flat so they can cool. Continue until all batter is gone.</li>
+						</ol>
+					</section>
+
+					<div class="break"></div>
+
+					<section id="notes">
+						<h2>
+							Notes
+						</h2>
+						<p>
+							After they have cooled you can stack them and store in sealable plastic bags in the refrigerator for several days or in
+							the freezer for up to two months. When using frozen crepes, thaw on a rack before gently peeling apart.
+						</p>
+					</section>
+				</section>
+			</main>
+		</div>
+
+		<footer>
+			{% include footer.html %}
+		</footer>
+	</body>
+
+</html>
