@@ -1,6 +1,5 @@
 ---
 title: Desserts
-type: notrecipe
 ---
 <!doctype html>
 <html lang="en">
@@ -28,22 +27,22 @@ type: notrecipe
 						<h2>
 							Recent Desserts
 						</h2>
-						{% assign recent_pgs = site.pages | where_exp: "item", "item.categories contains 'desserts'" | where_exp: "item", "item.type != 'notrecipe'" | sort: "date" | reverse %}
+						{% assign recent_pgs = site.pages | where_exp: "item", "item.categories contains 'desserts'" | sort: "id" | reverse %}
 						
 						<ul>
-							{% for page in recent_pgs limit: 6 %}
+							{% for pg in recent_pgs limit: 6 %}
 							<li>
-								<img class="image" src="{{ page.url }}{{ page.image }}" alt="{{ page.title }}">
+								<img class="image" src="{{ pg.url }}{{ pg.image }}" alt="{{ pg.title }}">
 						
 								<section class="text">
 									<p class="title">
-										<a href="{{ page.url }}" class="public">{{ page.title }}</a>
+										<a href="{{ pg.url }}" class="public">{{ pg.title }}</a>
 									</p>
 									<p class="category">
-										{{ page.categories | first | capitalize }} - {{ page.tag | capitalize }}
+										{{ pg.categories | first }} - {{ pg.tag }}
 									</p>
 									<p class="details">
-										Time to cook: {{ page.time }}
+										Time to cook: {{ pg.time }}
 									</p>
 								</section>
 							</li>

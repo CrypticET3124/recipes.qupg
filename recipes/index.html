@@ -1,6 +1,5 @@
 ---
 title: Recipes
-type: notrecipe
 ---
 <!doctype html>
 <html lang="en">
@@ -28,25 +27,27 @@ type: notrecipe
 						<h2>
 							Recent Recipes
 						</h2>
-						{% assign recent_pgs = site.pages | where_exp: "item", "item.categories contains 'recipes'" | where_exp: "item", "item.type != 'notrecipe'" | sort: "date" | reverse %}
+						{% assign recent_pgs = site.pages | where_exp: "item", "item.categories contains 'recipes'" | sort: "id" | reverse %}
 
 						<ul>
-							{% for page in recent_pgs limit: 6 %}
-								<li>
-									<img class="image" src="{{ page.url }}{{ page.image }}" alt="{{ page.title }}">
-							
-									<section class="text">
-										<p class="title">
-											<a href="{{ page.url }}" class="public">{{ page.title }}</a>
-										</p>
-										<p class="category">
-											{{ page.categories | first | capitalize }} - {{ page.tag | capitalize }}
-										</p>
-										<p class="details">
-											Time to cook: {{ page.time }}
-										</p>
-									</section>
-								</li>
+							{% for pg in recent_pgs limit: 6 %}
+							<li>
+								<img class="image"
+									src="{% if pg.imgtype == 'abs' %}{{ pg.image }}{% else %}{{ pg.url }}{{ pg.image }}{% endif %}"
+									alt="{{ pg.title }}">
+
+								<section class="text">
+									<p class="title">
+										<a href="{{ pg.url }}" class="public">{{ pg.title }}</a>
+									</p>
+									<p class="category">
+										{{ pg.categories | first }} - {{ pg.tag }}
+									</p>
+									<p class="details">
+										Time to cook: {{ pg.time }}
+									</p>
+								</section>
+							</li>
 							{% endfor %}
 						</ul>
 					</section>

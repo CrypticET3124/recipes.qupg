@@ -4,13 +4,25 @@ incremental: true
 defaults:
   -
     scope:
-      path: "recipes/breakfast"
+      path: "recipes/breakfast/*/*"
       type: "pages"
     values:
       categories: ["breakfast", "recipes"]
   -
     scope:
-      path: "recipes/desserts"
+      path: "recipes/desserts/*/*"
       type: "pages"
     values:
       categories: ["desserts", "recipes"]
+  -
+    scope:
+      path: "recipes/entrees/*/*"
+      type: "pages"
+    values:
+      categories: ["entrees", "recipes"]
+  -
+    scope:
+      path: "recipes/sauces/*/*"
+      type: "pages"
+    values:
+      categories: ["sauces", "recipes"]
